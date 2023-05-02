@@ -1,0 +1,45 @@
+@import "reset"; @import "function";
+$bgColor:black; $textColor:white; $fontSize:18px; $grey:grey; $center:center;
+$primary:blue; $danger:red; $heit:100vh; $flexible:flex; $content:space-around;
+#wrapper{
+    @include bodyfund;
+    @for $i from 1 through 3{
+        .base-#{i}{color: 15rem * $i}
+    }
+    header{
+        display: $flexible;
+        justify-content: space-between;
+        background-color:$grey;
+        align-items: $center;
+        gap: 4rem;
+        padding: 2rem;
+        figure{
+            border:.1rem solid $primary;
+            border-radius: .4rem;
+            text-align: center;
+        }
+        nav{
+            font-size: x-large;
+            // border:.2rem solid blue;
+            ul{
+                 @extend header;
+                 li a{
+                    text-decoration: none;
+                    color: complement($primary);
+                 }
+            }
+        }
+        form{
+            border: .1rem solid yellow;
+            input[type='search']{
+                height: 6vh;
+                background-color: aquamarine;
+                @extend nav;
+                padding: 0 .2rem;
+                &:hover{
+                    color:$primary;
+                }
+            }
+        }
+    }
+}

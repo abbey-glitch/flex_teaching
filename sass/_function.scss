@@ -1,0 +1,5 @@
+@function compliment($primary){
+    $complement:complement($primary);
+    $light_complement: lighten($compliment, 30%);
+    @return $light_complement;
+}
